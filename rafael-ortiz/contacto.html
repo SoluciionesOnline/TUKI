@@ -106,8 +106,10 @@
           <input type="hidden" name="_subject" value="Nuevo mensaje desde la web — Rafael Ortiz Lozano" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="true" />
-          <!-- _next: agrega aquí la URL absoluta de esta página en producción (p. ej. https://tudominio.com/contacto.html?enviado=1)
-               para redirigir de vuelta con el banner de confirmación. Sin este campo, FormSubmit muestra su página de gracias por defecto. -->
+          <!-- El valor de _next se completa automáticamente por JS (ver main.js) con la URL real
+               de esta página (dominio de Vercel o el que se configure), para volver aquí con el
+               banner de confirmación en vez de la página de gracias por defecto de FormSubmit. -->
+          <input type="hidden" name="_next" id="form-next" value="" />
           <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" />
 
           <div class="field-row">

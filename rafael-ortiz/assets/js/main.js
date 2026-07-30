@@ -29,6 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
     successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
+  // Completa el _next del formulario con la URL real (funciona en cualquier dominio: Vercel, preview o custom)
+  const nextField = document.querySelector('#form-next');
+  if (nextField) {
+    nextField.value = `${window.location.origin}${window.location.pathname}?enviado=1`;
+  }
+
   // Galería de fotos (lightbox)
   const lightbox = document.querySelector('.lightbox');
   const galleryItems = document.querySelectorAll('[data-gallery]');
