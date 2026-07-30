@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ortiz &amp; Mosquera Producciones · Portafolio de Servicios</title>
+<meta name="description" content="Portafolio de servicios de producción integral de eventos en vivo — Ibagué, Tolima." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0b0b0d;
+    --black-2:#141416;
+    --black-3:#1c1c1f;
+    --gold:#c9a15a;
+    --gold-light:#e6cd9a;
+    --gold-dim:#8a7042;
+    --ivory:#f4efe6;
+    --grey:#a9a6a0;
+    --line:rgba(201,161,90,0.25);
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--black);
+    color:var(--ivory);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:700;
+    letter-spacing:0.01em;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  a{color:inherit;text-decoration:none;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:0.28em;
+    font-size:0.72rem;
+    color:var(--gold);
+    font-weight:600;
+  }
+  .divider{
+    width:64px;height:2px;
+    background:linear-gradient(90deg,var(--gold),transparent);
+    margin:18px 0 28px;
+  }
+  .divider.center{margin-left:auto;margin-right:auto;background:var(--gold);}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,11,13,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:16px;padding-bottom:16px;
+  }
+  .brand{font-family:'Cormorant Garamond',serif;font-size:1.35rem;letter-spacing:0.04em;font-weight:700;}
+  .brand span{color:var(--gold);}
+  nav ul{display:flex;gap:32px;list-style:none;}
+  nav ul li a{
+    font-size:0.82rem;text-transform:uppercase;letter-spacing:0.12em;
+    color:var(--grey);transition:color .2s;
+  }
+  nav ul li a:hover{color:var(--gold-light);}
+
+  /* HERO */
+  header.hero{
+    position:relative;
+    min-height:92vh;
+    display:flex;align-items:center;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(201,161,90,0.12), transparent 55%),
+      radial-gradient(ellipse at 80% 80%, rgba(201,161,90,0.08), transparent 55%),
+      linear-gradient(180deg,var(--black) 0%, var(--black-2) 100%);
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  header.hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:64px 64px;
+    opacity:0.15;
+    mask-image:radial-gradient(ellipse at center, black, transparent 75%);
+  }
+  .hero-inner{position:relative;z-index:2;padding:80px 0;text-align:center;}
+  .hero h1{
+    font-size:clamp(2.6rem,6vw,4.6rem);
+    line-height:1.05;
+    color:var(--ivory);
+  }
+  .hero h1 em{font-style:normal;color:var(--gold);}
+  .hero p.lead{
+    max-width:640px;margin:22px auto 0;
+    color:var(--grey);font-size:1.08rem;
+  }
+  .hero .cta-row{margin-top:40px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:14px 32px;
+    font-size:0.82rem;text-transform:uppercase;letter-spacing:0.14em;font-weight:600;
+    border-radius:2px;transition:all .25s;
+  }
+  .btn-gold{background:var(--gold);color:var(--black);}
+  .btn-gold:hover{background:var(--gold-light);}
+  .btn-outline{border:1px solid var(--gold-dim);color:var(--ivory);}
+  .btn-outline:hover{border-color:var(--gold);background:rgba(201,161,90,0.08);}
+
+  section{padding:110px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{max-width:760px;margin-bottom:56px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(2rem,3.4vw,2.9rem);}
+  .section-head p{color:var(--grey);margin-top:16px;font-size:1.02rem;}
+
+  /* NOSOTROS */
+  .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:start;}
+  .about-grid p{color:var(--grey);margin-bottom:18px;font-size:1.02rem;}
+  .about-grid strong{color:var(--ivory);}
+  .stat-card{
+    background:var(--black-3);border:1px solid var(--line);
+    padding:28px;margin-bottom:16px;
+  }
+  .stat-card h4{color:var(--gold);font-size:1.5rem;margin-bottom:6px;}
+  .stat-card span{font-size:0.85rem;color:var(--grey);text-transform:uppercase;letter-spacing:0.08em;}
+
+  /* SOCIOS */
+  .partners{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .partner-card{
+    background:linear-gradient(180deg,var(--black-3),var(--black-2));
+    border:1px solid var(--line);
+  }
+  .photo-frame{
+    aspect-ratio:4/5;width:100%;
+    border-bottom:1px solid var(--line);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+    background:
+      repeating-linear-gradient(45deg, rgba(201,161,90,0.05) 0 2px, transparent 2px 14px),
+      var(--black);
+    color:var(--gold-dim);
+  }
+  .photo-frame svg{width:40px;height:40px;opacity:0.7;}
+  .photo-frame span{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;text-align:center;padding:0 24px;}
+  .partner-body{padding:32px;}
+  .partner-role{color:var(--gold);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:6px;}
+  .partner-body h3{font-size:1.7rem;margin-bottom:14px;}
+  .partner-body p{color:var(--grey);font-size:0.96rem;margin-bottom:14px;}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .tag{
+    border:1px solid var(--line);color:var(--gold-light);
+    font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;
+    padding:6px 12px;
+  }
+  .highlight-list{margin-top:16px;list-style:none;}
+  .highlight-list li{
+    color:var(--grey);font-size:0.92rem;padding-left:18px;position:relative;margin-bottom:8px;
+  }
+  .highlight-list li::before{
+    content:"";position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--gold);
+  }
+
+  /* ARTISTAS */
+  input[name="tabs"]{display:none;}
+  .tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px;}
+  .tabs label{
+    cursor:pointer;padding:10px 20px;border:1px solid var(--line);
+    font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--grey);
+    transition:all .2s;
+  }
+  .tab-panel{display:none;}
+  #t1:checked ~ .tabs label[for="t1"],
+  #t2:checked ~ .tabs label[for="t2"],
+  #t3:checked ~ .tabs label[for="t3"],
+  #t4:checked ~ .tabs label[for="t4"],
+  #t5:checked ~ .tabs label[for="t5"],
+  #t6:checked ~ .tabs label[for="t6"]{
+    background:var(--gold);color:var(--black);border-color:var(--gold);font-weight:600;
+  }
+  #t1:checked ~ #p1,
+  #t2:checked ~ #p2,
+  #t3:checked ~ #p3,
+  #t4:checked ~ #p4,
+  #t5:checked ~ #p5,
+  #t6:checked ~ #p6{display:block;}
+
+  .cat-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .cat-col h4{
+    font-family:'Inter',sans-serif;font-size:0.78rem;text-transform:uppercase;
+    letter-spacing:0.16em;color:var(--gold);margin-bottom:18px;
+    padding-bottom:10px;border-bottom:1px solid var(--line);
+  }
+  .artist-list{list-style:none;}
+  .artist-list li{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.06);
+    font-size:1rem;
+  }
+  .artist-list li .name{color:var(--ivory);font-weight:500;}
+  .artist-list li .flag{
+    font-size:0.65rem;letter-spacing:0.08em;color:var(--grey);text-transform:uppercase;
+    border:1px solid var(--line);padding:3px 8px;white-space:nowrap;margin-left:12px;
+  }
+  .artist-note{
+    margin-top:36px;padding:20px 24px;border-left:2px solid var(--gold);
+    background:var(--black-3);color:var(--grey);font-size:0.92rem;
+  }
+
+  /* SERVICIOS */
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .service-card{background:var(--black-2);padding:36px 28px;}
+  .service-card .icon{
+    width:44px;height:44px;border:1px solid var(--gold-dim);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--gold);
+  }
+  .service-card h4{font-size:1.15rem;margin-bottom:10px;color:var(--ivory);font-weight:600;font-family:'Inter',sans-serif;}
+  .service-card p{color:var(--grey);font-size:0.88rem;}
+
+  /* WHY US */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+  .why-card{padding:0;}
+  .why-card .num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--gold-dim);}
+  .why-card h4{font-size:1.25rem;margin:10px 0 10px;}
+  .why-card p{color:var(--grey);font-size:0.92rem;}
+
+  /* CONTACT / FOOTER */
+  footer{padding:90px 0 40px;}
+  .contact-box{
+    background:linear-gradient(135deg,var(--black-3),var(--black-2));
+    border:1px solid var(--line);
+    padding:60px;text-align:center;
+  }
+  .contact-box h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:16px;}
+  .contact-box p{color:var(--grey);max-width:520px;margin:0 auto 32px;}
+  .contact-info{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:44px;}
+  .contact-info div{font-size:0.85rem;color:var(--grey);}
+  .contact-info div strong{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:0.1em;font-size:0.7rem;margin-bottom:6px;}
+  .foot-bottom{
+    margin-top:50px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:0.78rem;color:var(--grey);
+  }
+
+  @media(max-width:860px){
+    .about-grid,.partners,.cat-cols,.why-grid{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    nav ul{display:none;}
+    .contact-box{padding:36px 24px;}
+    .contact-info{gap:24px;justify-content:flex-start;text-align:left;}
+  }
+  @media(max-width:520px){
+    .services-grid{grid-template-columns:1fr;}
+  }
+
+  @media print{
+    nav{display:none;}
+    body{background:#fff;color:#111;}
+    section{border-color:#ddd;page-break-inside:avoid;}
+    .hero{min-height:auto;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">ORTIZ <span>&amp;</span> MOSQUERA <span>·</span> Producciones</div>
+    <ul>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#socios">Socios</a></li>
+      <li><a href="#artistas">Artistas</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Producción integral de eventos en vivo</div>
+    <h1>Experiencias en <em>vivo</em><br>de categoría mundial,<br>hechas en el Tolima.</h1>
+    <p class="lead">Diseñamos, producimos y montamos conciertos y espectáculos de principio a fin — artistas, sonido, luces y dirección escénica — con el mismo estándar de exigencia con el que se hacen los grandes festivales del país.</p>
+    <div class="cta-row">
+      <a href="#contacto" class="btn btn-gold">Agenda tu evento</a>
+      <a href="#artistas" class="btn btn-outline">Ver parrilla de artistas</a>
+    </div>
+  </div>
+</header>
+
+<section id="nosotros">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Quiénes somos</div>
+      <h2>Una sociedad entre la solidez del negocio<br>y la experiencia del escenario.</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p><strong>Ortiz &amp; Mosquera Producciones</strong> nace de la unión de dos socios con trayectorias complementarias: gestión empresarial de alto rendimiento y una vida entera dedicada a la música, la cultura y la producción de eventos en vivo.</p>
+        <p>Nuestro propósito es sencillo: llevar a Ibagué y al Tolima producciones de conciertos con el nivel de artistas, montaje técnico y dirección escénica que hasta ahora solo se veían en las grandes ciudades — trabajando tanto con talento emergente regional como con artistas nacionales e internacionales.</p>
+        <p>Empezamos en Ibagué porque es nuestra casa y porque creemos que la región tiene el público, la cultura y la demanda para sostener eventos de altísima categoría. Desde aquí, proyectamos cada producción con estándares que permiten crecer hacia otras ciudades del país.</p>
+      </div>
+      <div>
+        <div class="stat-card">
+          <h4>360°</h4>
+          <span>Producción integral: artista, montaje, técnica y logística</span>
+        </div>
+        <div class="stat-card">
+          <h4>Nacional &amp; Internacional</h4>
+          <span>Red de booking con artistas emergentes, nacionales e internacionales</span>
+        </div>
+        <div class="stat-card">
+          <h4>Ibagué · Tolima</h4>
+          <span>Base de operación, con proyección de expansión regional</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="socios">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">Los socios</div>
+      <h2>Dos visiones, un mismo estándar de excelencia.</h2>
+    </div>
+    <div class="partners">
+
+      <div class="partner-card">
+        <div class="photo-frame">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 7h3l2-2h6l2 2h3v13H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+          <span>Fotografía oficial<br>Rafael Ortiz</span>
+        </div>
+        <div class="partner-body">
+          <div class="partner-role">Socio · CEO</div>
+          <h3>Rafael Ortiz</h3>
+          <p>Contador de profesión y deportista de alto rendimiento, Rafael aporta a la sociedad la disciplina, el rigor financiero y la visión de negocio necesarios para que cada producción sea rentable, ordenada y sostenible en el tiempo. Es CEO de Monch y Dankai, experiencia empresarial que respalda la estructura administrativa y comercial de la sociedad.</p>
+          <div class="tag-row">
+            <span class="tag">Gestión financiera</span>
+            <span class="tag">Alto rendimiento</span>
+            <span class="tag">CEO Monch &amp; Dankai</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="partner-card">
+        <div class="photo-frame">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 7h3l2-2h6l2 2h3v13H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+          <span>Fotografía oficial<br>Tania Mosquera</span>
+        </div>
+        <div class="partner-body">
+          <div class="partner-role">Socia · Dirección Artística y de Producción</div>
+          <h3>Tania Mosquera</h3>
+          <p>Música, artista y gestora cultural, especialista en proyectos culturales, con amplia trayectoria en coordinación, diseño y producción de eventos en vivo. Su experiencia en el terreno —desde el montaje técnico hasta la coordinación de artistas— es la columna vertebral creativa y operativa de cada evento.</p>
+          <ul class="highlight-list">
+            <li>Coordinación — Festival Folclórico Colombia</li>
+            <li>Coordinación — Cartagena Festival</li>
+            <li>Coordinación — Ferias de Café, Rioblanco (Tolima)</li>
+            <li>Múltiples producciones culturales adicionales en el territorio nacional</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="artistas">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Parrilla de artistas 2026</div>
+      <h2>Talento para cada tipo de evento,<br>organizado por género musical.</h2>
+      <p>Contamos con una red activa de booking que combina talento emergente regional con artistas consolidados a nivel nacional e internacional. Esta es una muestra representativa de la parrilla disponible; la oferta se ajusta según el perfil, fecha y aforo del evento.</p>
+    </div>
+
+    <input type="radio" name="tabs" id="t1" checked>
+    <input type="radio" name="tabs" id="t2">
+    <input type="radio" name="tabs" id="t3">
+    <input type="radio" name="tabs" id="t4">
+    <input type="radio" name="tabs" id="t5">
+    <input type="radio" name="tabs" id="t6">
+
+    <div class="tabs">
+      <label for="t1">Vallenato &amp; Música Popular</label>
+      <label for="t2">Urbano &amp; Reggaetón</label>
+      <label for="t3">Pop &amp; Rock</label>
+      <label for="t4">Salsa &amp; Tropical</label>
+      <label for="t5">Folclor, Carranga &amp; Orquestas</label>
+      <label for="t6">Talento Emergente Regional</label>
+    </div>
+
+    <div id="p1" class="tab-panel">
+      <div class="cat-cols">
+        <div class="cat-col">
+          <h4>Artistas Nacionales</h4>
+          <ul class="artist-list">
+            <li><span class="name">Iván Villazón</span></li>
+            <li><span class="name">Alfredo Gutiérrez</span></li>
+            <li><span class="name">Luis Alfonso</span></li>
+            <li><span class="name">Jorge Celedón</span></li>
+            <li><span class="name">Rafa Pérez</span></li>
+            <li><span class="name">Daniel Calderón</span></li>
+            <li><span class="name">Elder Dayán Díaz</span></li>
+            <li><span class="name">Paola Jara</span></li>
+            <li><span class="name">Nico Hernández</span></li>
+            <li><span class="name">Juan Duque</span></li>
+          </ul>
+        </div>
+        <div class="cat-col">
+          <h4>Herederos &amp; Duetos de Tradición</h4>
+          <ul class="artist-list">
+            <li><span class="name">Samuel Morales</span><span class="flag">Hijo de Kaleth Morales</span></li>
+            <li><span class="name">Daniel Geles</span><span class="flag">Hijo de Omar Geles</span></li>
+            <li><span class="name">Martín Elías Jr.</span><span class="flag">Hijo de Martín Elías</span></li>
+            <li><span class="name">Antonio Oñate</span><span class="flag">Hijo de Jorge Oñate</span></li>
+            <li><span class="name">Golpe a Golpe</span></li>
+            <li><span class="name">Cris &amp; Rony</span></li>
+            <li><span class="name">Yader y Campillo X-Kvras</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="p2" class="tab-panel">
+      <div class="cat-cols">
+        <div class="cat-col">
+          <h4>Artistas Nacionales</h4>
+          <ul class="artist-list">
+            <li><span class="name">Kapo</span></li>
+            <li><span class="name">Belee</span></li>
+            <li><span class="name">Ryan Castro</span></li>
+            <li><span class="name">Farina</span></li>
+            <li><span class="name">Luigi Plus</span></li>
+          </ul>
+        </div>
+        <div class="cat-col">
+          <h4>Artistas Internacionales</h4>
+          <ul class="artist-list">
+            <li><span class="name">J Álvarez</span><span class="flag">Puerto Rico</span></li>
+            <li><span class="name">Dálmata</span><span class="flag">Puerto Rico</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="p3" class="tab-panel">
+      <div class="cat-cols">
+        <div class="cat-col">
+          <h4>Artistas Nacionales</h4>
+          <ul class="artist-list">
+            <li><span class="name">Morat</span></li>
+            <li><span class="name">Andrés Cepeda</span></li>
+            <li><span class="name">Fanny Lu</span></li>
+            <li><span class="name">Maia</span></li>
+            <li><span class="name">Siam</span></li>
+            <li><span class="name">Aterciopelados</span></li>
+          </ul>
+        </div>
+        <div class="cat-col">
+          <h4>Artistas Internacionales</h4>
+          <ul class="artist-list">
+            <li><span class="name">Bacilos</span><span class="flag">Latin Grammy</span></li>
+            <li><span class="name">Nacho</span><span class="flag">Venezuela</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="p4" class="tab-panel">
+      <div class="cat-cols">
+        <div class="cat-col">
+          <h4>Artistas Nacionales</h4>
+          <ul class="artist-list">
+            <li><span class="name">Grupo Niche</span></li>
+            <li><span class="name">La 33</span></li>
+            <li><span class="name">Cali Flow Latino</span></li>
+            <li><span class="name">Shocquibtawn</span></li>
+            <li><span class="name">Los Hermanos Medina</span></li>
+            <li><span class="name">Tropinova</span><span class="flag">Orquesta femenina</span></li>
+          </ul>
+        </div>
+        <div class="cat-col">
+          <h4>Artistas Internacionales</h4>
+          <ul class="artist-list">
+            <li><span class="name">Wilfredo Vargas</span><span class="flag">Rep. Dominicana</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="p5" class="tab-panel">
+      <div class="cat-cols">
+        <div class="cat-col">
+          <h4>Bailable, Popular &amp; Norteño</h4>
+          <ul class="artist-list">
+            <li><span class="name">Banda Krranga</span></li>
+            <li><span class="name">Los Graduados del Loco Quintero</span></li>
+            <li><span class="name">Banda Parranda</span></li>
+            <li><span class="name">Maycol Rosero</span></li>
+            <li><span class="name">Julián Daza</span></li>
+            <li><span class="name">Luisito Muñoz</span></li>
+            <li><span class="name">Sebastián Ayala</span></li>
+            <li><span class="name">Jimy Gutiérrez</span></li>
+            <li><span class="name">Grupo Tornado</span><span class="flag">Norteño</span></li>
+            <li><span class="name">Rumba Kids</span><span class="flag">Orquesta</span></li>
+          </ul>
+        </div>
+        <div class="cat-col">
+          <h4>Folclor, Comedia &amp; Show Especial</h4>
+          <ul class="artist-list">
+            <li><span class="name">Los Kantores Coco y Coronel</span><span class="flag">Comedia bailable</span></li>
+            <li><span class="name">La Banda de Santana</span><span class="flag">Carranga tropical</span></li>
+            <li><span class="name">Planchando el Despecho</span><span class="flag">Show tributo</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="p6" class="tab-panel">
+      <div class="cat-cols">
+        <div class="cat-col">
+          <h4>Vallenato &amp; Popular Regional</h4>
+          <ul class="artist-list">
+            <li><span class="name">Jeank Centeno</span></li>
+            <li><span class="name">Hernán Gómez</span></li>
+            <li><span class="name">Alan Ramírez</span></li>
+            <li><span class="name">Ciro Quiñonez</span></li>
+            <li><span class="name">Diego Daza</span></li>
+            <li><span class="name">Miguel Morales</span></li>
+            <li><span class="name">Silvio Brito</span></li>
+            <li><span class="name">Amín Martínez</span></li>
+            <li><span class="name">JR Vargas</span><span class="flag">Hijo de Hébert Vargas</span></li>
+            <li><span class="name">Rafael María Díaz</span></li>
+          </ul>
+        </div>
+        <div class="cat-col">
+          <h4>Agrupaciones Regionales</h4>
+          <ul class="artist-list">
+            <li><span class="name">Los Bacanes del Sur</span></li>
+            <li><span class="name">Los K Morales</span></li>
+            <li><span class="name">Camilo Rivera &amp; Juan Felipe Samper</span></li>
+            <li><span class="name">Bonka</span></li>
+            <li><span class="name">San Alejo</span></li>
+            <li><span class="name">Palo de Agua</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="artist-note">
+      Parrilla sujeta a disponibilidad y confirmación de agenda. Booking, condiciones técnicas (raider) y cotización se gestionan de manera personalizada para cada evento.
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">Producción integral</div>
+      <h2>Todo lo que necesita un evento de alta categoría,<br>bajo una sola operación.</h2>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg>
+        </div>
+        <h4>Diseño y concepto</h4>
+        <p>Concepto creativo, identidad visual del evento y experiencia de marca a la medida del público objetivo.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 4h16v12H4z"/><path d="M9 20h6M12 16v4"/></svg>
+        </div>
+        <h4>Booking de artistas</h4>
+        <p>Gestión de artistas emergentes, nacionales e internacionales, contratación y coordinación de raider técnico y logístico.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 10v4h4l5 4V6l-5 4H3z"/><path d="M17 9a5 5 0 010 6"/></svg>
+        </div>
+        <h4>Sonido profesional</h4>
+        <p>Sistemas de audio line array, monitoreo en tarima e ingeniería de sonido para espacios abiertos y cerrados.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </div>
+        <h4>Iluminación y montaje</h4>
+        <p>Diseño de iluminación escénica, estructuras, tarima y montaje técnico integral del evento.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 20l6-6M21 4l-6 6M8 4l4 4-4 4-4-4z"/></svg>
+        </div>
+        <h4>Dirección de escena</h4>
+        <p>Rundown, coordinación de show en vivo y dirección técnica durante el evento, de principio a fin.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12h16M4 6h16M4 18h16"/></svg>
+        </div>
+        <h4>Logística &amp; staging</h4>
+        <p>Backstage, camerinos, catering de artistas, transporte y coordinación integral de proveedores.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>
+        </div>
+        <h4>Permisos &amp; seguridad</h4>
+        <p>Trámites ante autoridades locales, plan de seguridad, control de aforo y protocolos de contingencia.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg>
+        </div>
+        <h4>Gestión financiera</h4>
+        <p>Presupuesto, control de costos y ejecución administrativa transparente de cada producción.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="porque">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">Por qué elegirnos</div>
+      <h2>Rigor de negocio, criterio artístico.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="num">01</div>
+        <h4>Una sola operación, cero intermediarios sueltos</h4>
+        <p>Artista, montaje técnico, logística y administración bajo una misma sociedad — menos fricción, más control de calidad.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">02</div>
+        <h4>Experiencia real en grandes producciones</h4>
+        <p>Trayectoria comprobada en festivales y ferias de gran formato en Colombia, aplicada ahora al mercado del Tolima.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">03</div>
+        <h4>Visión financiera aplicada al espectáculo</h4>
+        <p>Cada evento se estructura con criterios de rentabilidad y cumplimiento, no solo de escenario.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contacto">
+  <div class="wrap">
+    <div class="contact-box">
+      <div class="eyebrow" style="text-align:center;">Hablemos de tu evento</div>
+      <h2>Llevemos tu próximo concierto<br>al siguiente nivel.</h2>
+      <p>Cuéntanos la fecha, el aforo esperado y el tipo de artista que buscas. Preparamos una propuesta de producción a la medida.</p>
+      <a href="#" class="btn btn-gold">Solicitar propuesta</a>
+
+      <div class="contact-info">
+        <div><strong>Ubicación</strong>Ibagué, Tolima — Colombia</div>
+        <div><strong>Correo</strong>contacto@ortizymosquera.com</div>
+        <div><strong>Teléfono / WhatsApp</strong>+57 000 000 0000</div>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <div>© 2026 Ortiz &amp; Mosquera Producciones. Todos los derechos reservados.</div>
+      <div>Producción de eventos en vivo · Ibagué, Tolima</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
